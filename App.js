@@ -10,7 +10,8 @@ import {
   StyleSheet,
   View
 } from 'react-native';
-import Header from './src/components/header';
+import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -18,12 +19,15 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-
+// http://rallycoding.herokuapp.com/api/music_albums
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <Header />
+      <View>
+        <Header headerText={'Albums'}/>
+        <AlbumList />
+      </View>
     );
   }
 }
